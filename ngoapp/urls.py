@@ -7,5 +7,5 @@ urlpatterns = [
     path("listngo", views.listt, name="listt"),
     path("signupuser", views.signupuser, name="signupuser"),
     path("loginuser", views.loginuser, name="loginuser"),
-
+    path("passgen",views.passgen,name="passgen"),
 ]
