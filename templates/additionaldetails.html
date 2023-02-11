@@ -1,0 +1,222 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NGO REGISTRATION</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+        <link rel="stylesheet" href="{% static "assets/bootstrap/css/bootstrap.min.css"%}">
+        <link rel="stylesheet" href="{% static "assets/font-awesome/css/font-awesome.min.css"%}">
+		<link rel="stylesheet" href="{% static "assets/css/form-elements.css"%}">
+        <link rel="stylesheet" href="{% static "assets/css/style.css"%}">
+        <link rel="stylesheet" href="{% static "assets/css/media-queries.css"%}">
+
+        <!-- HTML5 Shim and Respond.js"%} IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js"%} doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"%}"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js"%}/1.4.2/respond.min.js"%}"></script>
+        <![endif]-->
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="{% static "assets/ico/favicon.png"%}">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{% static "assets/ico/apple-touch-icon-144-precomposed.png"%}">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="{% static "assets/ico/apple-touch-icon-114-precomposed.png"%}">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{% static "assets/ico/apple-touch-icon-72-precomposed.png"%}">
+        <link rel="apple-touch-icon-precomposed" href="{% static "assets/ico/apple-touch-icon-57-precomposed.png"%}">
+
+    </head>
+
+    <body>
+		
+		<!-- Top menu -->
+		<!-- <nav class="navbar navbar-inverse" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html">Bootstrap Long Multi-Step Form</a>
+				</div>
+				 Collect the nav links, forms, and other content for toggling -->
+				<!--<div class="collapse navbar-collapse" id="top-navbar-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<span class="li-text">
+								Follow us: 
+							</span> 
+							<span class="li-social">
+								<a href="http://www.facebook.com/pages/Azmindcom/196582707093191" target="_blank"><i class="fa fa-facebook"></i></a> 
+								<a href="http://twitter.com/anli_zaimi" target="_blank"><i class="fa fa-twitter"></i></a> 
+								<a href="https://plus.google.com/101131425868807087570" target="_blank"><i class="fa fa-google-plus"></i></a>
+							</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav> -->
+        
+        <!-- Description -->
+		<div class="description-container">
+	        <div class="container">
+	        	<div class="row">
+	                <div class="col-sm-12 description-title">
+	                    <h2>Enter more details</h2>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-12 description-text">
+	                    <p>
+	                    </p>
+	                       </div>
+	            </div>
+			</div>
+		</div>
+		
+		<!-- Multi Step Form -->
+		<div class="msf-container">
+	        <div class="container">
+	        	<div class="row">
+	                <div class="col-sm-12 msf-title">
+	                    <h3>Fill In The Form</h3>
+	                    <p>Please complete the form below to get registered:</p>
+	                </div>
+	            </div>
+	            <div class="row">
+	                <div class="col-sm-12 msf-form">
+	                    {%csrf_token%}
+	                    <form role="form" action="/details" method="post" class="form-inline">
+	                    	
+	                    	<fieldset>
+
+	            				<h4>Introduction <span class="step">(Step 1 / 5)</span></h4>
+	            				<div class="form-group">
+				                    <label for="first-name">Previous works</label><br>
+				                    <textarea name="prev-works" class="about-you form-control" id="prev-works"></textarea>
+				               				                </div>
+				                <div class="form-group">
+				                    <label for="last-name">End goal</label><br>
+                                    <textarea name="endgoal" class="about-you form-control" id="endgoal"></textarea>
+                                </div>
+				                <!-- <div class="form-group">
+				                    <label for="height">Height:</label><br>
+				                    <input type="text" name="height" class="height form-control" id="height">
+				                </div>
+				                <div class="form-group">
+				                    <label for="weight">Weight:</label><br>
+				                    <input type="text" name="weight" class="weight form-control" id="weight">
+				                </div> -->
+	            				<br>
+	            				<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+	            			</fieldset>
+	            			
+							
+	            			<fieldset>
+	            				<h4>Plans <span class="step">(Step 2 / 5)</span></h4>
+	            				<div class="form-group">
+				                    <label for="birth-city">Upcoming plans</label><br>
+				                    <input type="text" name="plans" class="birth-city form-control" id="birth-city">
+				                </div>
+				                <div class="form-group">
+				                    <label for="birth-state">Vision</label><br>
+				                    <input type="text" name="vision" class="birth-state form-control" id="birth-state">
+				                </div>
+				                
+	            				<br>
+	            				<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+	            				<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+	            			</fieldset>
+	            			
+	            			<fieldset>
+	            				<h4>Donation needs <span class="step">(Step 3 / 5)</span></h4>
+	            				<div class="form-group">
+				                    <label for="address">Funding needs</label><br>
+				                    <input type="text" name="fund" class="address form-control" id="address">
+				                </div>
+				                <div class="form-group">
+				                    <label for="address-city">Fields working on :</label>
+
+                                        
+                            <select name="field" id="state" class="form-control">
+                                <option value="Education">Education</option>
+                                <option value="Food">Food</option>
+                                <option value="Shelter">Shelter</option>
+                                <option value="Health">Health</option>
+
+                                </select>
+                               </div>
+				              	<br>
+	            				<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+	            				<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+	            			</fieldset>
+	                    	
+	                    	<fieldset>
+	            				<h4>Social Media Profiles <span class="step">(Step 4 / 5)</span></h4>
+	            				<div class="form-group">
+				                    <label for="social-facebook">Facebook:</label><br>
+				                    <input type="text" name="social-facebook" class="social-facebook form-control" id="social-facebook">
+				                </div>
+				                <div class="form-group">
+				                    <label for="social-twitter">Twitter:</label><br>
+				                    <input type="text" name="social-twitter" class="social-twitter form-control" id="social-twitter">
+				                </div>
+				               
+				                <div class="form-group">
+				                    <label for="social-instagram">Instagram:</label><br>
+				                    <input type="text" name="social-instagram" class="social-instagram form-control" id="social-instagram">
+				                </div>
+				                <div class="form-group">
+				                    <label for="social-pinterest">Website (if any) : </label><br>
+				                    <input type="text" name="social-website" class="social-pinterest form-control" id="social-pinterest">
+				                </div>
+	            				<br>
+	            				<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+	            				<button type="button" class="btn btn-next">Next <i class="fa fa-angle-right"></i></button>
+	            			</fieldset>
+	            			
+	            			<fieldset>
+	            				<h4>About You <span class="step">(Step 5 / 5)</span></h4>
+	            				<div class="form-group">
+									<label for="about-you">Short summary :</label><br>
+				                    <textarea name="about" class="about-you form-control" id="about-you"></textarea>
+				                </div>
+	            				<br>
+	            				<button type="button" class="btn btn-previous"><i class="fa fa-angle-left"></i> Previous</button>
+	            				<button type="submit" class="btn btn-next">Submit <i class="fa fa-angle-right"></i></button>
+	            			</fieldset>
+	            			
+	            			
+	            			
+	            		
+	                    </form>
+	                    
+	                </div>
+	            </div>
+			</div>
+		</div>
+		
+		
+
+        <!-- Javascript -->
+        <script src="{% static "assets/js/jquery-1.11.1.min.js"%}"></script>
+        <script src="{% static "assets/bootstrap/js/bootstrap.min.js"%}"></script>
+        <script src="{% static "assets/js/jquery.backstretch.min.js"%}"></script>
+        <script src="{% static "assets/js/scripts.js"%}"></script>
+        
+        <!--[if lt IE 10]>
+            <script src="{% static "assets/js/placeholder.js"%}"></script>
+        <![endif]-->
+
+    </body>
+
+</html>

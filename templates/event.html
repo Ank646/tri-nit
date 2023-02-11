@@ -1,0 +1,336 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>List of all ngos</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="Free Website Template" name="keywords">
+        <meta content="Free Website Template" name="description">
+
+        <!-- Favicon -->
+          <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        
+        <!-- CSS Libraries -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <link href="{%static "lib/flaticon/font/flaticon.css"%}" rel="stylesheet">
+        <link href="{%static "lib/animate/animate.min.css"%}" rel="stylesheet">
+        <link href="{%static "lib/owlcarousel/assets/owl.carousel.min.css"%}" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="{%static "csss/style.css"%}" rel="stylesheet">
+        </head>
+
+    <body>
+        <!-- Top Bar End -->
+
+        <!-- Nav Bar Start -->
+        <div class="navbar navbar-expand-lg bg-dark navbar-dark">
+            <div class="container-fluid">
+                <a href="index.html" class="navbar-brand">NGOS</a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                    <div class="navbar-nav ml-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">All Ngos</a>
+                        <a href="causes.html" class="nav-item nav-link">NGO login</a>
+                        <a href="event.html" class="nav-item nav-link active">Donate</a>
+                        <a href="blog.html" class="nav-item nav-link">Blog</a>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu">
+                                <a href="single.html" class="dropdown-item">Detail Page</a>
+                                <a href="service.html" class="dropdown-item">What We Do</a>
+                                <a href="team.html" class="dropdown-item">Meet The Team</a>
+                                <a href="donate.html" class="dropdown-item">Donate Now</a>
+                                <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
+                            </div>
+                        </div>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Nav Bar End -->
+        
+        
+        <!-- Page Header Start -->
+        <div class="page-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <h2>All NGOS</h2>
+                    </div>
+                    <div class="col-12">
+                        <a href="">Home</a>
+                        <a href="">Events</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Page Header End -->
+        
+        
+        <!-- Event Start -->
+        <div class="event">
+            <div class="container">
+                <div class="section-header text-center">
+                    <form>
+                        <input class="form-control" id='search'placeholder="Search by name">
+                        <input type="button"  class="btn btn-custom"  onClick="searchbyname()" value="Search">
+                        <br><br>
+                                   
+                       
+
+                        
+                    </form>
+                    <form action="/state" method="POST">
+                        {%csrf_token%}
+                      
+                            <select name="state" id="state" class="form-control">
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Dadar and Nagar Haveli">Dadar and Nagar Haveli</option>
+                                <option value="Daman and Diu">Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                               
+                        </select>    <input type="button"  class="btn btn-custom"  onClick="search()" value="Filter by state">
+                                               
+                      
+                    </form>
+                    <script>
+                        // JavaScript code
+function search() {
+let input = document.getElementById('state').value
+input=input.toLowerCase();
+
+let x = document.getElementsByClassName('anim');
+
+
+for (i = 0; i < x.length; i++) {
+
+if (!x[i].innerHTML.toLowerCase().includes(input)) {
+
+x[i].style.display="none";
+}
+else {
+x[i].style.display="block";				
+}
+}}
+         // JavaScript code
+         function searchbyname() {
+let input = document.getElementById('search').value
+input=input.toLowerCase();
+
+let x = document.getElementsByClassName('anim');
+
+
+for (i = 0; i < x.length; i++) {
+
+if (!x[i].innerHTML.toLowerCase().includes(input)) {
+
+x[i].style.display="none";
+}
+else {
+x[i].style.display="block";				
+}
+}}
+function suggest() {
+let input = document.getElementById('donate').value
+input=input.toLowerCase();
+
+let x = document.getElementsByClassName('anim');
+
+
+for (i = 0; i < x.length; i++) {
+
+if (!x[i].innerHTML.toLowerCase().includes(input)) {
+
+x[i].style.display="none";
+}
+else {
+x[i].style.display="block";				
+}
+}}
+
+
+</script>  
+                    <h2>NGOs in Area</h2>
+                </div>
+                <form>
+                    
+                    <label for="address-city">Donation Preference :</label>
+
+                                        
+                    <select name="fieldd" id="donate" class="form-control">
+                        <option value="Education">Education</option>
+                        <option value="Food">Food</option>
+                        <option value="Shelter">Shelter</option>
+                        <option value="Health">Health</option>
+
+                        </select>
+                       <input type="button"  class="btn btn-custom"  onClick="suggest()" value="Suggest  NGO according to my choice">
+                    <br><br>
+                               
+                   
+
+                    
+                </form>
+                <div class="row">
+                  {%for ng in ngo%}
+                  <div class="col-lg-6 anim">
+                    <div class="event-item">
+                        <img src="{%static "img/event-2.jpg"%}" alt="Image">
+                       <div class="event-content">
+                            <div class="event-meta">
+                                 <p><i class="fa fa-angle-right"></i>{{ng.ngofb}}</p>
+                                 <!-- <p><i class="fa fa-twitter"></i>{{ng.ngotwitter}}</p> -->
+                                 <p><i class="fa fa-angle-right"></i>{{ng.ngolinked}}</p>
+                                 <p><i class="fa fa-angle-right"></i>{{ng.ngoinsta}}</p>
+                               
+                            </div>
+                            <div class="event-text">
+                                <h3>{{ng.ngoname}}</h3>
+                                <h3>{{ng.ngofield}}</h3>
+                                <h4>{{ng.ngocity}}</h4>
+                                <h4>{{ng.ngostate}}</h4>
+                                <p>{{ng.ngoabout}}    </p>
+                                <a class="btn btn-custom" href="">Join Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  {%endfor%}
+                    
+                    
+                </div>
+            </div>
+        </div>
+        <!-- Event End -->
+
+
+        <!-- Footer Start -->
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-contact">
+                            <h2>Our Head Office</h2>
+                            <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
+                            <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
+                            <p><i class="fa fa-envelope"></i>info@example.com</p>
+                            <div class="footer-social">
+                                <a class="btn btn-custom" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-youtube"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-custom" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Popular Links</h2>
+                            <a href="">About Us</a>
+                            <a href="">Contact Us</a>
+                            <a href="">Popular Causes</a>
+                            <a href="">Upcoming Events</a>
+                            <a href="">Latest Blog</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-link">
+                            <h2>Useful Links</h2>
+                            <a href="">Terms of use</a>
+                            <a href="">Privacy policy</a>
+                            <a href="">Cookies</a>
+                            <a href="">Help</a>
+                            <a href="">FQAs</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-newsletter">
+                            <h2>Newsletter</h2>
+                            <form>
+                                <input class="form-control" placeholder="Email goes here">
+                                <button class="btn btn-custom">Submit</button>
+                                <label>Don't worry, we don't spam!</label>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container copyright">
+                <div class="row">
+                    <div class="col-md-6">
+                        <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to top button -->
+        <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+        
+        <!-- Pre Loader -->
+        <div id="loader" class="show">
+            <div class="loader"></div>
+        </div>
+
+        <!-- JavaScript Libraries -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <script src="{%static "lib/easing/easing.min.js"%}"></script>
+        <script src="{%static "lib/owlcarousel/owl.carousel.min.js"%}"></script>
+        <script src="{%static "lib/waypoints/waypoints.min.js"%}"></script>
+        <script src="{%static "lib/counterup/counterup.min.js"%}"></script>
+        <script src="{%static "lib/parallax/parallax.min.js"%}"></script>
+        
+        <!-- Contact Javascript File -->
+        <script src="{%static "mail/jqBootstrapValidation.min.js"%}"></script>
+        <script src="{%static "mail/contact.js"%}"></script>
+
+        <!-- Template Javascript -->
+        <script src="{%static "jss/main.js"%}"></script>
+    </body>
+</html>
