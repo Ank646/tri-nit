@@ -9,6 +9,7 @@ User = get_user_model()
 
 class ngo(models.Model):
     ngoname = models.ForeignKey(User, on_delete=models.CASCADE)
+    ngonm = models.TextField(blank=True)
     ngoregid = models.TextField()
     ngofield = models.TextField(blank=True)
     ngoaddress = models.TextField(blank=True)
@@ -40,3 +41,10 @@ class userpro(models.Model):
     lastname = models.TextField(blank=True)
     password = models.TextField(blank=True)
     kindofngo = models.TextField(blank=True)
+
+
+class ngoorder(models.Model):
+    ngoreg = models.TextField(blank=True)
+    ngocat = models.TextField(blank=True)
+    ngoexp = models.TextField(blank=True)
+    ngoamount = models.TextField(blank=True)

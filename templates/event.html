@@ -29,29 +29,23 @@
         <!-- Nav Bar Start -->
         <div class="navbar navbar-expand-lg bg-dark navbar-dark">
             <div class="container-fluid">
-                <a href="index.html" class="navbar-brand">NGOS</a>
+                <a href="/" class="navbar-brand">NGOs</a>
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav ml-auto">
-                        <a href="index.html" class="nav-item nav-link">Home</a>
-                        <a href="about.html" class="nav-item nav-link">All Ngos</a>
-                        <a href="causes.html" class="nav-item nav-link">NGO login</a>
-                        <a href="event.html" class="nav-item nav-link active">Donate</a>
-                        <a href="blog.html" class="nav-item nav-link">Blog</a>
-                        <div class="nav-item dropdown">
-                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Pages</a>
-                            <div class="dropdown-menu">
-                                <a href="single.html" class="dropdown-item">Detail Page</a>
-                                <a href="service.html" class="dropdown-item">What We Do</a>
-                                <a href="team.html" class="dropdown-item">Meet The Team</a>
-                                <a href="donate.html" class="dropdown-item">Donate Now</a>
-                                <a href="volunteer.html" class="dropdown-item">Become A Volunteer</a>
-                            </div>
-                        </div>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="/" class="nav-item nav-link active">Home</a>
+                        <a href="/listngo" class="nav-item nav-link">List of all NGOs</a>
+                        <a href="" class="nav-item nav-link">Donate</a>
+                        <a href="/signupuser" class="nav-item nav-link">UserSignup</a>
+                        <a href="/loginuser" class="nav-item nav-link">UserLogin</a>
+                        <a href="/signupngo" class="nav-item nav-link">NGOSignup</a>
+                        <a href="/loginadmin" class="nav-item nav-link">NGOLogin</a>
+                      
+                      
+                      
                     </div>
                 </div>
             </div>
@@ -227,11 +221,12 @@ x[i].style.display="block";
                             </div>
                             <div class="event-text">
                                 <h3>{{ng.ngoname}}</h3>
-                                <h3>{{ng.ngofield}}</h3>
-                                <h4>{{ng.ngocity}}</h4>
-                                <h4>{{ng.ngostate}}</h4>
-                                <p>{{ng.ngoabout}}    </p>
-                                <a class="btn btn-custom" href="">Join Now</a>
+                                <h3>{{ng.ngofield.upper}}</h3>
+                                
+                                <h4>{{ng.ngostate.upper}}</h4>
+                                <h4>{{ng.ngocity.upper}}</h4>
+                                <p>    </p>
+                                <a class="btn btn-custom" href={{ng.ngoregid}}/ngos>Join Now</a>
                             </div>
                         </div>
                     </div>
@@ -247,65 +242,7 @@ x[i].style.display="block";
 
         <!-- Footer Start -->
         <div class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-contact">
-                            <h2>Our Head Office</h2>
-                            <p><i class="fa fa-map-marker-alt"></i>123 Street, New York, USA</p>
-                            <p><i class="fa fa-phone-alt"></i>+012 345 67890</p>
-                            <p><i class="fa fa-envelope"></i>info@example.com</p>
-                            <div class="footer-social">
-                                <a class="btn btn-custom" href=""><i class="fab fa-twitter"></i></a>
-                                <a class="btn btn-custom" href=""><i class="fab fa-facebook-f"></i></a>
-                                <a class="btn btn-custom" href=""><i class="fab fa-youtube"></i></a>
-                                <a class="btn btn-custom" href=""><i class="fab fa-instagram"></i></a>
-                                <a class="btn btn-custom" href=""><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-link">
-                            <h2>Popular Links</h2>
-                            <a href="">About Us</a>
-                            <a href="">Contact Us</a>
-                            <a href="">Popular Causes</a>
-                            <a href="">Upcoming Events</a>
-                            <a href="">Latest Blog</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-link">
-                            <h2>Useful Links</h2>
-                            <a href="">Terms of use</a>
-                            <a href="">Privacy policy</a>
-                            <a href="">Cookies</a>
-                            <a href="">Help</a>
-                            <a href="">FQAs</a>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6">
-                        <div class="footer-newsletter">
-                            <h2>Newsletter</h2>
-                            <form>
-                                <input class="form-control" placeholder="Email goes here">
-                                <button class="btn btn-custom">Submit</button>
-                                <label>Don't worry, we don't spam!</label>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="container copyright">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; <a href="#">Your Site Name</a>, All Right Reserved.</p>
-                    </div>
-                    <div class="col-md-6">
-                        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>
-                    </div>
-                </div>
-            </div>
+           
         </div>
         <!-- Footer End -->
 
